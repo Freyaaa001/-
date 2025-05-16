@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="展示健康服务利用、收入与吸烟行为的统计建模项目，涵盖 GLM、Poisson 回归、Bootstrap、核平滑等技术。">
   <title>我的项目作品集</title>
   <style>
     body {
@@ -27,7 +28,11 @@
       color: #4a90e2;
       margin-top: 0;
     }
-    .project p {
+    .project ul {
+      padding-left: 1.2rem;
+    }
+    .project li {
+      margin-bottom: 0.8rem;
       color: #555;
       line-height: 1.6;
     }
@@ -46,31 +51,49 @@
 <body>
   <h1>我的项目作品集</h1>
 
-  <div class="project">
-    <h2>每周收入统计分析</h2>
-    <p>• 主导端到端数据分析项目，完成 4,903 条劳动力市场数据清洗与特征工程，通过 R 语言实现数据预处
-      理自动化</p> 
-    <p>• 开发并行计算脚本提升数据处理效率 40%，使用 PCA 降维至 9 维保留 98% 信息量，构建含交互项的
-      多元线性回归模型</p>
-    <a href="Project1-项目.pdf" target="_blank">查看报告</a>
-  </div>
+  <section class="project">
+    <h2>健康服务利用行为的统计建模</h2>
+    <ul>
+      <li>基于 1084 名美国私营部门员工数据，构建 Poisson 回归模型解释收入、教育、性别等变量对家庭医生访问频率的影响</li>
+      <li>通过稳健标准误与 Bootstrap 方法测试模型对异方差与过度离散的鲁棒性</li>
+      <li>Wald 检验结果显示，教育、性别、慢性病和保险状态显著影响就诊次数，而收入、婚姻和拉丁裔身份在稳健检验下不再显著</li>
+      <li>慢性病患者就诊次数增加 121%，女性比男性多就诊 77%，有私人保险者就诊次数增加 61%</li>
+    </ul>
+    <a href="project_healthcare.pdf" target="_blank">查看报告</a>
+  </section>
 
-  <div class="project">
-    <h2>健吸烟状况的统计分析</h2>
-    <p>• 设计广义线性模型（GLM）和逻辑回归分析，精确量化政策干预（OR=0.772）与社会因素（OR=0.113-
-      0.563）的影响</p>
-      <p>• 清洗 10,000 条健康数据，实现离群值检测与缺失值插补，提升处理效率 35%, 运用 AIC 准则和似然
-        比检验进行模型比较，发现交互效应显著（50.4%-201.2%），优化变量编码方案</p>
-    <a href="project_2项目.pdf" target="_blank">查看报告</a>
-  </div>
-
-  <div class="project">
+  <section class="project">
     <h2>悉尼机场温度变化统计检验</h2>
-    <p>• 主导气候变化温度分析项目，对比 1973 与 2003 年 52 周温度数据，揭示极端高温频率增加（2003 年
-      最高 41.1℃ vs 1973 年 39.7℃）</p>
-      <p> • 应用 Wilcoxon 符号秩检验和非参数平滑模型，通过 LOO-CV 优化带宽选择（h=3,4），最小化 MSE</p>
-    <a href="project_3 项目.pdf" target="_blank">查看报告</a>
-  </div>
+    <ul>
+      <li>分析 1973 与 2003 年 52 周最高气温数据，检验城市化背景下极端高温事件的系统性趋势</li>
+      <li>通过 Wilcoxon 符号秩检验未发现中位数显著差异，但个别极端值有所升高</li>
+      <li>比较核平滑与自然样条模型，发现前者更有效揭示周期性结构</li>
+      <li>基于 LOO-CV 选择带宽参数（h=3,4），最小化模型 MSE</li>
+    </ul>
+    <a href="project_climate.pdf" target="_blank">查看报告</a>
+  </section>
+
+  <section class="project">
+    <h2>吸烟行为的逻辑回归分析</h2>
+    <ul>
+      <li>基于 1 万名在职人群调查数据，评估年龄、教育、性别与禁烟政策对吸烟倾向的影响</li>
+      <li>逻辑回归结果显示：高教育水平、女性身份、职场禁烟政策均显著降低吸烟概率</li>
+      <li>在非裔与拉丁裔群体中，教育阶段越高吸烟概率反而升高，揭示控烟政策存在族群差异</li>
+      <li>似然比检验与 AIC 比较发现将教育作为连续变量更有效刻画非线性效应</li>
+    </ul>
+    <a href="project_smoking.pdf" target="_blank">查看报告</a>
+  </section>
+
+  <section class="project">
+    <h2>美国男性周收入回归分析</h2>
+    <ul>
+      <li>分析 4903 条劳动力数据，研究种族、教育、地区、城市化程度对收入的系统性影响</li>
+      <li>通过对数变换线性模型发现：白人每周收入比黑人高 20.8%，教育每升一级带来 15% 增长，但增长速率随年龄上升减缓</li>
+      <li>识别关键交互效应，如“教育 × 年龄”与“地区 × 城市化程度”，揭示收入结构非均质性</li>
+      <li>采用数值变量处理教育水平可简化模型、增强解释性并保留精度</li>
+    </ul>
+    <a href="project_income.pdf" target="_blank">查看报告</a>
+  </section>
 
 </body>
 </html>
